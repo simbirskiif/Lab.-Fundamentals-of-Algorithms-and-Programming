@@ -50,42 +50,45 @@ void l214() {
 }
 
 void l215() {
+    //Блок схема
     printf("Температура: ");
     int a;
     scanf("%d", &a);
     if (a < -25) {
         printf("мороз");
     }
-    if (a >= -25 & a < 9) {
+    else if (a >= -25 & a < 9) {
         printf("холодно");
     }
-    if (a >= 9 & a < 22) {
+    else if (a >= 9 & a < 22) {
         printf("тепло");
     }
-    if (a >= 22) {
+    else if (a >= 22) {
         printf("жарко");
     }
 }
 
 void l216() {
+    //б
     printf("Цена: ");
     int a;
     scanf("%d", &a);
     if (a < 13000) {
         printf("дешево");
     }
-    if (a >= 13000 & a < 40000) {
+    else if (a >= 13000 & a < 40000) {
         printf("нормально");
     }
-    if (a >= 40000 & a < 80000) {
+    else if (a >= 40000 & a < 80000) {
         printf("дорого");
     }
-    if (a >= 80000) {
+    else if (a >= 80000) {
         printf("ужас дорого");
     }
 }
 
 void l217() {
+    //
     printf("Скорость км/ч: ");
     int a;
     scanf("%d", &a);
@@ -110,6 +113,7 @@ void l217() {
 }
 
 void l221() {
+    // бс
     printf("Число: ");
     int a;
     scanf("%d", &a);
@@ -121,6 +125,7 @@ void l221() {
 }
 
 void l222() {
+    //бс
     int a = 1;
     while (a <= 5) {
         printf("2 в %d степени: %.0f \n", a, pow(2, a));
@@ -142,7 +147,57 @@ void l223() {
     }
 }
 
+void l224() {
+    printf("Число: ");
+    int a;
+    scanf("%d", &a);
+    int b = 1;
+    while (b <= a) {
+        printf("%d ", b * 2);
+        b++;
+    }
+}
+
+void l225() {
+    printf("Число и кратность: ");
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int c = 1;
+    while (c <= a) {
+        printf("%d ", c * b);
+        c++;
+    }
+}
+
+void l226() {
+    //Вывести все натуральные числа от 1 до a, которые не делятся без остатка на 3.
+    printf("Число: ");
+    int a;
+    scanf("%d", &a);
+    int c = 1;
+    while (c <= a) {
+        printf(c % 3 != 0 ? "%d " : "", c);
+        c++;
+    }
+}
+
+//Получает 2500 руб и тратит 500 в месяц
+void l227() {
+    int a = 24;
+    int n = 0;
+    int t = 0;
+    while (t <= a) {
+        printf("%d месяц - %d \n",t, (2500 - 500) * t);
+        t++;
+    }
+}
+
+//224 - код и бс
+//225 -
+//226 код и бс
+//227 код и бс
+
 void main(void) {
     SetConsoleOutputCP(CP_UTF8);
-    l223();
+    l227();
 }
