@@ -262,6 +262,131 @@ void l31B() {
     SelectObject(hdc, pen3);
     SelectObject(hdc, pen4);
     Ellipse(hdc, c - 7 + 25, y - 7 + 15, c + 7 + 25, y + 7 + 15);
+    Ellipse(hdc, c - 7 + 25 + 20, y - 7 + 15, c + 7 + 25 + 20, y + 7 + 15);
+    Ellipse(hdc, c - 7 + 25 + 20 + 20, y - 7 + 15, c + 7 + 25 + 20 + 20, y + 7 + 15);
+    SetTextColor(hdc, RGB(30, 144, 255));
+    SetBkMode(hdc, TRANSPARENT);
+    TextOut(hdc, c + 25, y + 25, "OceanGate", 9);
+    HPEN pen5 = CreatePen(PS_SOLID, 3, RGB(236, 236, 128));
+    HBRUSH pen6 = CreateSolidBrush(RGB(236, 236, 128));
+    SelectObject(hdc, pen5);
+    SelectObject(hdc, pen6);
+    BeginPath(hdc);
+    MoveToEx(hdc, c, y + 25, 0);
+    LineTo(hdc, c - 125, y);
+    LineTo(hdc, c - 125, y + 50);
+    EndPath(hdc);
+    FillPath(hdc);
+}
+
+void l321() {
+    int c = 175;
+    int y = 125;
+    int a = -5;
+    HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+    SelectObject(hdc, pen);
+    while (a < 5) {
+        MoveToEx(hdc, c, y, 0);
+        LineTo(hdc, c + 10 * a, y - 50);
+        a++;
+    }
+}
+
+void l322() {
+    int c = 125;
+    int y = 50;
+    HPEN pen = CreatePen(PS_SOLID, 1, RGB(20, 220, 32));
+    SelectObject(hdc, pen);
+    int a = -5;
+    while (a <= 5) {
+        MoveToEx(hdc, c, y, 0);
+        LineTo(hdc, c + 10 * a, y - 50 + (10 * abs(a)));
+        a++;
+    }
+}
+
+void l323() {
+    {
+        int c = 175;
+        int y = 125;
+        int a = -15;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+        SelectObject(hdc, pen);
+        while (a <= 15) {
+            MoveToEx(hdc, c, y, 0);
+            LineTo(hdc, c + 5 * a, y - 50);
+            a++;
+        }
+    }
+    {
+        int c = 125;
+        int y = 300;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(20, 220, 32));
+        SelectObject(hdc, pen);
+        int a = -20;
+        while (a <= 20) {
+            MoveToEx(hdc, c, y, 0);
+            LineTo(hdc, c + 5 * a, y - 100 + (5 * abs(a)));
+            a++;
+        }
+    }
+}
+
+void l324() {
+    int c = 125;
+    int y = 50;
+    int a = 0;
+    HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 255));
+    SelectObject(hdc, pen);
+    while (a <= 25) {
+        MoveToEx(hdc, c + a * 5, y, 0);
+        LineTo(hdc, c + a * 5, y - 50);
+        a++;
+    }
+}
+
+void l3241() {
+    int c = 125;
+    int y = 50;
+    int a = 0;
+    HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 255));
+    SelectObject(hdc, pen);
+    while (a <= 100) {
+        MoveToEx(hdc, c + a * 2, y, 0);
+        LineTo(hdc, c + a * 2, y - 50);
+        a++;
+    }
+}
+
+void l325() {
+    {
+        int c = 25;
+        int y = 400;
+        int a = 0;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 255, 255));
+        SelectObject(hdc, pen);
+        MoveToEx(hdc, c, y, 0);
+        LineTo(hdc, c, y + 125);
+        MoveToEx(hdc, c + 50, y, 0);
+        LineTo(hdc, c + 50, y + 125);
+        while (a <= 25) {
+            MoveToEx(hdc, c, y + 5 * a, 0);
+            LineTo(hdc, c + 50, y + 5 * a);
+            a++;
+        }
+    }
+    {
+        int c = 10;
+        int y = 175;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(20, 235, 15));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 30) {
+            MoveToEx(hdc, c + 3 * a, y, 0);
+            LineTo(hdc, c + 3 * a, y + 20);
+            a++;
+        }
+    }
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -270,7 +395,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             PAINTSTRUCT ps;
             hdc = BeginPaint(hwnd, &ps);
             l311();
-            l312();
+            // l312();
             l313();
             l314();
             l315();
@@ -280,6 +405,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             l319();
             l31A();
             l31B();
+            // l321();
+            // l322();
+            l323();
+            // l324();
+            l3241();
+            l325();
             EndPaint(hwnd, &ps);
         }
             return 0;
@@ -309,7 +440,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
         "Моё окно", // заголовок
         WS_OVERLAPPEDWINDOW, // полный набор (рамка + все кнопки)
         CW_USEDEFAULT, CW_USEDEFAULT,
-        800, 600,
+        1280, 920,
         NULL, NULL, hInstance, NULL);
 
     ShowWindow(hwnd, SW_SHOW);
