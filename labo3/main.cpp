@@ -104,9 +104,165 @@ void l314() {
     MoveToEx(hdc, c - 15, y - 10 + 15 - 20, 0);
     LineTo(hdc, c - 30, y - 10 + 15 - 20 + 25);
     MoveToEx(hdc, c + 30, y - 10 + 15, 0);
-    LineTo(hdc, c + 15, y - 10 + 15 - 20 );
+    LineTo(hdc, c + 15, y - 10 + 15 - 20);
 }
 
+void l315() {
+    int c = 300;
+    int y = 100;
+    HPEN pen1 = CreatePen(PS_SOLID, 1, RGB(150, 75, 0));
+    HBRUSH pen2 = CreateSolidBrush(RGB(150, 75, 0));
+    SelectObject(hdc, pen1);
+    SelectObject(hdc, pen2);
+    BeginPath(hdc);
+    MoveToEx(hdc, c, y, 0);
+    LineTo(hdc, c - 15, y + 100);
+    LineTo(hdc, c + 15, y + 100);
+    EndPath(hdc);
+    FillPath(hdc);
+    HPEN pen3 = CreatePen(PS_SOLID, 1, RGB(40, 175, 20));
+    HBRUSH pen4 = CreateSolidBrush(RGB(40, 255, 20));
+    SelectObject(hdc, pen3);
+    SelectObject(hdc, pen4);
+    Ellipse(hdc, c - 20, y - 20, c + 20, y + 20);
+    Ellipse(hdc, c + 15 - 25, y + 25 - 25, c + 15 + 25, y + 25 + 25);
+    Ellipse(hdc, c - 10 - 25, y + 28 - 25, c - 10 + 25, y + 28 + 25);
+    Ellipse(hdc, c - 15 - 25, y + 50 - 25, c - 15 + 25, y + 50 + 25);
+    Ellipse(hdc, c + 15 - 25, y + 50 - 25, c + 15 + 25, y + 50 + 25);
+}
+
+void l316() {
+    int c = 400;
+    int y = 150;
+    HPEN pen1 = CreatePen(PS_SOLID, 1, RGB(41, 49, 51));
+    HBRUSH pen2 = CreateSolidBrush(RGB(194, 197, 204));
+    HBRUSH pen3 = CreateSolidBrush(RGB(194, 197, 204));
+    HPEN pen4 = CreatePen(PS_SOLID, 1,RGB(218, 165, 32));
+    HBRUSH pen5 = CreateSolidBrush(RGB(218, 165, 32));
+    HPEN pen6 = CreatePen(PS_SOLID, 1,RGB(255, 248, 220));
+    HBRUSH pen7 = CreateSolidBrush(RGB(255, 248, 220));
+    SelectObject(hdc, pen6);
+    SelectObject(hdc, pen7);
+    Ellipse(hdc, c - 60 + 60, y - 60 - 50 + 20, c + 60 + 60, y + 60 - 50 + 20);
+
+    SelectObject(hdc, pen4);
+    SelectObject(hdc, pen5);
+    Ellipse(hdc, c - 30 + 60, y - 30 - 50 + 20, c + 30 + 60, y + 30 - 50 + 20);
+
+    SelectObject(hdc, pen1);
+    SelectObject(hdc, pen2);
+    Rectangle(hdc, c - 5, y - 75, c + 5, y + 75);
+    Rectangle(hdc, c - 5, y - 75, c + 60, y - 70);
+
+    SelectObject(hdc, pen3);
+    Ellipse(hdc, c - 7, y - 7 - 75, c + 7, y + 7 - 75);
+    SelectObject(hdc, pen2);
+    BeginPath(hdc);
+    MoveToEx(hdc, c + 60, y - 70, 0);
+    LineTo(hdc, c + 40, y - 50);
+    LineTo(hdc, c + 80, y - 50);
+    EndPath(hdc);
+    FillPath(hdc);
+}
+
+void l317() {
+    int c = 600;
+    int y = 150;
+    HPEN pen1 = CreatePen(PS_SOLID, 3, RGB(155, 66, 34));
+    SelectObject(hdc, pen1);
+    MoveToEx(hdc, c, y - 70, 0);
+    LineTo(hdc, c, y + 20);
+    MoveToEx(hdc, c, y - 40, 0);
+    LineTo(hdc, c + 30, y - 70);
+    MoveToEx(hdc, c, y, 0);
+    LineTo(hdc, c - 30, y - 40);
+}
+
+void l318() {
+    int c = 500;
+    int y = 400;
+    HBRUSH pen1 = CreateHatchBrush(HS_CROSS, RGB(0, 0, 0));
+    HPEN pen2 = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+
+    HBRUSH pen3 = CreateSolidBrush(RGB(0, 0, 0));
+    HPEN pen4 = CreatePen(PS_SOLID, 2,RGB(0, 0, 0));
+    SelectObject(hdc, pen3);
+    SelectObject(hdc, pen4);
+    MoveToEx(hdc, c, y, 0);
+    LineTo(hdc, c + 20, y - 30);
+    LineTo(hdc, c + 60, y - 30);
+    LineTo(hdc, c + 70, y);
+    MoveToEx(hdc, c + 60, y - 30, 0);
+    LineTo(hdc, c + 55, y - 50);
+    SelectObject(hdc, pen1);
+    SelectObject(hdc, pen2);
+    Ellipse(hdc, c - 18, y - 18, c + 18, y + 18);
+    Ellipse(hdc, c - 18 + 70, y - 18, c + 18 + 70, y + 18);
+
+    HPEN pen5 = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
+    HBRUSH pen6 = CreateSolidBrush(RGB(255, 255, 255));
+    SelectObject(hdc, pen5);
+    SelectObject(hdc, pen6);
+    Ellipse(hdc, c - 7, y - 7, c + 7, y + 7);
+    Ellipse(hdc, c - 10 + 35, y - 10, c + 10 + 35, y + 10);
+    MoveToEx(hdc, c + 35, y, 0);
+    LineTo(hdc, c + 50, y - 15);
+    MoveToEx(hdc, c + 35, y, 0);
+    LineTo(hdc, c + 20, y + 15);
+    MoveToEx(hdc, c, y - 7, 0);
+    LineTo(hdc, c + 35, y - 10);
+    MoveToEx(hdc, c, y + 7, 0);
+    LineTo(hdc, c + 35, y + 10);
+}
+
+void l319() {
+    int c = 700;
+    int y = 100;
+    HPEN pen1 = CreatePen(PS_SOLID, 3, RGB(192, 192, 192));
+    HBRUSH pen2 = CreateSolidBrush(RGB(192, 192, 192));
+    SelectObject(hdc, pen1);
+    SelectObject(hdc, pen2);
+    Rectangle(hdc, c - 50, y - 5, c + 50, y + 5);
+    Rectangle(hdc, c - 50, y - 5 + 100, c + 50, y + 5 + 100);
+
+    Rectangle(hdc, c - 50, y + 5, c - 50 + 10, y - 5 + 100);
+    Rectangle(hdc, c - 50 + 20, y + 5, c - 50 + 30, y - 5 + 100);
+    Rectangle(hdc, c - 50 + 40, y + 5, c - 50 + 50, y - 5 + 100);
+    Rectangle(hdc, c - 50 + 60, y + 5, c - 50 + 70, y - 5 + 100);
+    Rectangle(hdc, c - 50 + 80, y + 5, c - 50 + 90, y - 5 + 100);
+    Rectangle(hdc, c - 50 + 100, y - 5, c - 50 + 110, y + 5 + 100);
+}
+
+void l31A() {
+    int c = 400;
+    int y = 300;
+    HPEN pen1 = CreatePen(PS_SOLID, 3, RGB(100, 170, 210));
+    HBRUSH pen2 = CreateSolidBrush(RGB(135, 206, 235));
+    SelectObject(hdc, pen1);
+    SelectObject(hdc, pen2);
+    Ellipse(hdc, c - 30 - 15, y - 30 + 5, c + 30 - 15, y + 30 + 5);
+    Ellipse(hdc, c - 10, y - 10, c + 10, y + 10);
+    Ellipse(hdc, c - 30 + 20, y - 30 + 5, c + 30 + 20, y + 30 + 5);
+    Ellipse(hdc, c - 20 + 15, y - 20 - 15, c + 20 + 15, y + 20 - 15);
+    Ellipse(hdc, c - 25 - 15, y - 25 - 15, c + 25 - 15, y + 25 - 15);
+}
+
+void l31B() {
+    int c = 400;
+    int y = 500;
+    HPEN pen1 = CreatePen(PS_SOLID, 3, RGB(192, 192, 192));
+    HBRUSH pen2 = CreateSolidBrush(RGB(192, 192, 192));
+    SelectObject(hdc, pen1);
+    SelectObject(hdc, pen2);
+    Pie(hdc, c, y, c + 50, y + 50, c + 25, y, c + 25, y + 50);
+    Rectangle(hdc, c + 25, y, c + 100, y + 50);
+    Pie(hdc, c + 75, y, c + 125, y + 50, c + 100, y + 50, c + 100, y);
+    HPEN pen3 = CreatePen(PS_SOLID, 3, RGB(135, 206, 235));
+    HBRUSH pen4 = CreateSolidBrush(RGB(135, 206, 235));
+    SelectObject(hdc, pen3);
+    SelectObject(hdc, pen4);
+    Ellipse(hdc, c - 7 + 25, y - 7 + 15, c + 7 + 25, y + 7 + 15);
+}
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
@@ -117,6 +273,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             l312();
             l313();
             l314();
+            l315();
+            l316();
+            l317();
+            l318();
+            l319();
+            l31A();
+            l31B();
             EndPaint(hwnd, &ps);
         }
             return 0;
