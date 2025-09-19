@@ -472,8 +472,8 @@ void l327() {
         SelectObject(hdc, pen);
         int a = 0;
         while (a <= 20) {
-            MoveToEx(hdc, c + a * 5, y + a, 0);
-            LineTo(hdc, c + a * 5, y + 80 - a);
+            MoveToEx(hdc, c + a * 5, y +  10 -a, 0);
+            LineTo(hdc, c + a * 5, y + 80 + a);
             a++;
         }
     }
@@ -494,10 +494,22 @@ void l327() {
         int y = 200;
         HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
         SelectObject(hdc, pen);
-        int a = -7;
-        while (a <= 3) {
-            MoveToEx(hdc, c + (a + 7) * 10, y + abs(a) * 5, 0);
-            LineTo(hdc, c + 20 + (a + 7) * 3, y + 100);
+        int a = 0;
+        while (a <= 17) {
+            MoveToEx(hdc, c + a * 5, y + a * 5, 0);
+            LineTo(hdc, c + a * 2 + 50, y + 100 - a * 5);
+            a++;
+        }
+    }
+    {
+        int c = 560;
+        int y = 200;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(125, 255, 75));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c, y + 34 - a * 3, 0);
+            LineTo(hdc, c + 100, y + 34 + a * 5);
             a++;
         }
     }
@@ -505,8 +517,8 @@ void l327() {
 
 void l328() {
     {
-        int c = 300;
-        int y = 100;
+        int c = 100;
+        int y = 300;
         HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 255, 255));
         SelectObject(hdc, pen);
         int a = 0;
@@ -517,8 +529,8 @@ void l328() {
         }
     }
     {
-        int c = 500;
-        int y = 100;
+        int c = 220;
+        int y = 300;
         HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
         SelectObject(hdc, pen);
         int a = 0;
@@ -529,8 +541,8 @@ void l328() {
         }
     }
     {
-        int c = 300;
-        int y = 200;
+        int c = 340;
+        int y = 300;
         HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
         SelectObject(hdc, pen);
         int a = -3;
@@ -547,25 +559,26 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         case WM_PAINT: {
             PAINTSTRUCT ps;
             hdc = BeginPaint(hwnd, &ps);
-            // l311();
-            // l312();
-            // l313();
-            // l314();
-            // l315();
-            // l316();
-            // l317();
-            // l318();
-            // l319();
-            // l31A();
-            // l31B();
-            // l321();
-            // l322();
+            l311();
+            l312();
+            l313();
+            l314();
+            l315();
+            l316();
+            l317();
+            l318();
+            l319();
+            l31A();
+            l31B();
+            l321();
+            l322();
             // l323();
             // l324();
             // l3241();
             // l325();
-            l326();
-            l327();
+            // l326();
+            // l327();
+            // l328();
             EndPaint(hwnd, &ps);
         }
             return 0;
