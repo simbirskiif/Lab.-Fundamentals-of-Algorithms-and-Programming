@@ -389,28 +389,183 @@ void l325() {
     }
 }
 
+void l326() {
+    {
+        int c = 100;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(128, 0, 255));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c + 10 * a, y, 0);
+            LineTo(hdc, c - 10 * a, y + 100);
+            a++;
+        }
+    }
+    {
+        int c = 200;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 255));
+        SelectObject(hdc, pen);
+        int a = -10;
+        while (a <= 0) {
+            MoveToEx(hdc, c + 10 * a, y - 10 * a, 0);
+            LineTo(hdc, c - 10 * a, y + 100 + 10 * a);
+            a++;
+        }
+    }
+    {
+        int c = 300;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 255, 255));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c, y + 10 * a, 0);
+            LineTo(hdc, c + 10 * a, y + 100);
+            a++;
+        }
+    }
+    {
+        int c = 400;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 255));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c + 100 - a * 10, y + a * 6, 0);
+            LineTo(hdc, c + 100, y + 100 - a * 6);
+            a++;
+        }
+    }
+}
+
+void l327() {
+    {
+        int c = 500;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c + 100, y + a * 10, 0);
+            LineTo(hdc, c + a * 10, y + 100);
+            a++;
+        }
+    }
+    {
+        int c = 100;
+        int y = 200;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 255, 0));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c + a * 10, y, 0);
+            LineTo(hdc, c, y + 100 - a * 5);
+            a++;
+        }
+    }
+    {
+        int c = 200;
+        int y = 200;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 50, 255));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 20) {
+            MoveToEx(hdc, c + a * 5, y + a, 0);
+            LineTo(hdc, c + a * 5, y + 80 - a);
+            a++;
+        }
+    }
+    {
+        int c = 320;
+        int y = 200;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+        SelectObject(hdc, pen);
+        int a = -3;
+        while (a <= 7) {
+            MoveToEx(hdc, c + (a + 3) * 10, y + 50 - abs(a) * 5 + 1, 0);
+            LineTo(hdc, c + (a + 3) * 10, y + 50 + abs(a) * 5 + 1);
+            a++;
+        }
+    }
+    {
+        int c = 440;
+        int y = 200;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
+        SelectObject(hdc, pen);
+        int a = -7;
+        while (a <= 3) {
+            MoveToEx(hdc, c + (a + 7) * 10, y + abs(a) * 5, 0);
+            LineTo(hdc, c + 20 + (a + 7) * 3, y + 100);
+            a++;
+        }
+    }
+}
+
+void l328() {
+    {
+        int c = 300;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 255, 255));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c, y + 10 * a, 0);
+            LineTo(hdc, c + 10 * a, y);
+            a++;
+        }
+    }
+    {
+        int c = 500;
+        int y = 100;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+        SelectObject(hdc, pen);
+        int a = 0;
+        while (a <= 10) {
+            MoveToEx(hdc, c + 100, y + a * 10, 0);
+            LineTo(hdc, c + 100 - a * 10, y + 100);
+            a++;
+        }
+    }
+    {
+        int c = 300;
+        int y = 200;
+        HPEN pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+        SelectObject(hdc, pen);
+        int a = -3;
+        while (a <= 7) {
+            MoveToEx(hdc, c + (a + 3) * 10, y + abs(a) * 5, 0);
+            LineTo(hdc, c + (a + 3) * 10, y + 100 - abs(a) * 5);
+            a++;
+        }
+    }
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
         case WM_PAINT: {
             PAINTSTRUCT ps;
             hdc = BeginPaint(hwnd, &ps);
-            l311();
+            // l311();
             // l312();
-            l313();
-            l314();
-            l315();
-            l316();
-            l317();
-            l318();
-            l319();
-            l31A();
-            l31B();
+            // l313();
+            // l314();
+            // l315();
+            // l316();
+            // l317();
+            // l318();
+            // l319();
+            // l31A();
+            // l31B();
             // l321();
             // l322();
-            l323();
+            // l323();
             // l324();
-            l3241();
-            l325();
+            // l3241();
+            // l325();
+            l326();
+            l327();
             EndPaint(hwnd, &ps);
         }
             return 0;
